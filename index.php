@@ -21,7 +21,7 @@ $User = new User( $conf );
 Trace::reg_var("is user logged?", $User->user_loged);
 
 /************************* Load User Pref Lang ********************************/
-
+// TODO : Add pref lang from cookies and from DB
 Trace::add_step(__FILE__, "Load Language Dictionary");
 if (isset($Page::$conf["general"]["uselang"]) && is_string($Page::$conf["general"]["uselang"])) {
     require_once PATH_LANG.$Page::$conf["general"]["uselang"].'.php';
@@ -29,7 +29,7 @@ if (isset($Page::$conf["general"]["uselang"]) && is_string($Page::$conf["general
 Lang::load($Lang);
 
 /*********************** Login | Logout  Request? *****************************/
-
+// TODO : Redirect to dash location ??? add from conf where to redirect.
 Trace::add_step(__FILE__,"Login | Logout request ?");
 
 $login = $Page->Func->synth($_POST, array("username", "password"));

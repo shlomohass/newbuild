@@ -7,7 +7,6 @@ Trace::add_step(__FILE__,"Loading Page: dash -> dash");
 
 
 
-
 /********************* Set additional head CSS import ****************************/
 Trace::add_step(__FILE__,"Define css libs for head section");
 $Page->include_css(array(
@@ -37,9 +36,9 @@ $Page->set_js_lang(Lang::lang_hook_js("script-admin"));
 
 /****************************** Set Page Meta ***********************************/
 Trace::add_step(__FILE__,"Set dash page data");
-$Page->title = Lang::P("gen_title_prefix",false).Lang::P("admin_title",false);
-$Page->description = Lang::P("admin_desc",false);
-$Page->keywords = Lang::P("admin_keys",false);
+$Page->title        = Lang::P("gen_title_prefix",false).Lang::P("gen_title_for_display",false);
+$Page->description  = Lang::P("gen_desc",false);
+$Page->keywords     = Lang::P("gen_keys",false);
 
 
 
@@ -104,7 +103,7 @@ Trace::add_step(__FILE__,"Load page HTML");
 ?>
 <section class='container-fluid'>
     <div class="row">
-        <div class='admin-right-bar col-fixed-240'>
+        <div class='dash-right-bar col-fixed-240'>
             <?php 
                 $tabs = array(
                     "dash"           => ($Page->variable("load-view") === "dash")?"nav-active":"",
@@ -121,7 +120,7 @@ Trace::add_step(__FILE__,"Load page HTML");
                 </li>
                 <li class='<?php echo $tabs["makeform"]; ?>'>
                     <a href="?page=dash&t=makeform">
-                        <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
                         <?php Lang::P("dash_nav_makeform"); ?>
                     </a>
                 </li>
@@ -133,7 +132,7 @@ Trace::add_step(__FILE__,"Load page HTML");
                 </li>
             </ul>
         </div>
-        <div class='admin-main-bar col-md-12 col-offset-240'>
+        <div class='dash-main-bar col-md-12 col-offset-240'>
             <?php
                 include_once PATH_PAGES."dash".DS."page-".$Page->variable("load-view").".php";
             ?>

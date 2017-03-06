@@ -211,7 +211,7 @@ body {
 /*************************************************************
  * Modal Edit Sadac :
  *************************************************************/
-.modalTeneF {
+.modalformi {
     display: none;
     position: fixed;
     background-color: rgba(4, 4, 4, 0.62);
@@ -221,14 +221,14 @@ body {
     left:0;
     z-index: 20;
 }
-.modalTeneF .modalTeneF_wrap {
+.modalformi .modalformi_wrap {
     margin: 35px;
     border-radius: 5px;
     -webkit-box-shadow: 1px 1px 11px 1px #404040;
     -moz-box-shadow: 1px 1px 11px 1px #404040;
     box-shadow: 1px 1px 11px 1px #404040;
 }
-.modalTeneF .modalTeneF_wrap .modalTeneF_head {
+.modalformi .modalformi_wrap .modalformi_head {
     background-color: #f6eff9;
     padding: 20px;
     border-radius: 5px 5px 0px 0px;
@@ -236,64 +236,64 @@ body {
     font-weight: bold;
     border-bottom: 1px solid #e6ddea;
 }
-.modalTeneF .modalTeneF_wrap .modalTeneF_head .highlighted_name {
+.modalformi .modalformi_wrap .modalformi_head .highlighted_name {
     color: #a960c7;
 }
-.modalTeneF .modalTeneF_wrap .modalTeneF_bodyFixed {
+.modalformi .modalformi_wrap .modalformi_bodyFixed {
     background-color: white;
     padding: 20px;
     padding-bottom: 5px;
 }
-.modalTeneF .modalTeneF_wrap .modalTeneF_body {
+.modalformi .modalformi_wrap .modalformi_body {
     height: 50vh;
     background-color: white;
     padding: 20px;
     padding-top: 0px;
     overflow-y: auto;
 }
-.modalTeneF .modalTeneF_wrap .modalTeneF_foot {
+.modalformi .modalformi_wrap .modalformi_foot {
     padding: 10px;
     background-color: white;
     border-radius: 0px 0px 5px 5px;
     border-top: 1px solid #e4e4e4;
     text-align: left;
 }
-.modalTeneF .modalTeneF_wrap .modalTeneF_bodyFixed h4,
-.modalTeneF .modalTeneF_wrap .modalTeneF_body h4 {
+.modalformi .modalformi_wrap .modalformi_bodyFixed h4,
+.modalformi .modalformi_wrap .modalformi_body h4 {
     border-bottom: 1px solid #cecece;
     padding-bottom: 5px;
     margin-bottom: 10px;
     font-weight: bold;
 }
-.modalTeneF .modalTeneF_wrap .modalTeneF_bodyFixed h4 .glyphicon,
-.modalTeneF .modalTeneF_wrap .modalTeneF_body h4 .glyphicon {
+.modalformi .modalformi_wrap .modalformi_bodyFixed h4 .glyphicon,
+.modalformi .modalformi_wrap .modalformi_body h4 .glyphicon {
     font-size: 14px;
     margin-left: 5px;
 }
-.modalTeneF .modalTeneF_wrap .amlist_quick_view {
+.modalformi .modalformi_wrap .amlist_quick_view {
     width:100%;
 }
-.modalTeneF .modalTeneF_wrap .amlist_quick_view tr:nth-child(even) {
+.modalformi .modalformi_wrap .amlist_quick_view tr:nth-child(even) {
     background-color: #efefef;
     border-right: 1px solid #efefef;
     border-left: 1px solid #efefef;
 }
-.modalTeneF .modalTeneF_wrap .amlist_quick_view tr th {
+.modalformi .modalformi_wrap .amlist_quick_view tr th {
       padding: 4px 8px;
       border: 1px solid #9e9e9e;
       background-color: #f1e3ff;
       text-align: right;
 }
-.modalTeneF .modalTeneF_wrap .amlist_quick_view tr td {
+.modalformi .modalformi_wrap .amlist_quick_view tr td {
     padding: 4px 8px;
     border: 1px solid #9e9e9e;
 }
-.modalTeneF .modalTeneF_wrap .amlist_quick_view tr td .glyphicon {
+.modalformi .modalformi_wrap .amlist_quick_view tr td .glyphicon {
     float:left;
     margin-right: 12px;
     cursor:pointer;
 }
-.modalTeneF .modalTeneF_wrap .amlist_quick_view tr td.amlist_amgroup_row {
+.modalformi .modalformi_wrap .amlist_quick_view tr td.amlist_amgroup_row {
     background-color: #ffecc3;
     font-weight: bold;
 }
@@ -436,40 +436,40 @@ h4.makerep_loaded_unit_title span {
 /*************************************************************
  * Modal Edit Parts :
  *************************************************************/
-.modalTeneF .modalTeneF_wrap .parts-list-for-am {
+.modalformi .modalformi_wrap .parts-list-for-am {
     padding:15px;
     height: 300px;
 }
 
-.modalTeneF .modalTeneF_wrap .parts-list-for-am > table {
+.modalformi .modalformi_wrap .parts-list-for-am > table {
     display: flex;
     flex-flow: column;
     height: 100%;
     width: 100%;
     font-size: 11px;
 }
-.modalTeneF .modalTeneF_wrap .parts-list-for-am > table thead {
+.modalformi .modalformi_wrap .parts-list-for-am > table thead {
     flex: 0 0 auto;
     width: calc(100% - 1.5em);
 }
-.modalTeneF .modalTeneF_wrap .parts-list-for-am > table tbody {
+.modalformi .modalformi_wrap .parts-list-for-am > table tbody {
     /* body takes all the remaining available space */
     flex: 1 1 auto;
     display: block;
     overflow-y: scroll;
 }
-.modalTeneF .modalTeneF_wrap .parts-list-for-am > table tbody tr {
+.modalformi .modalformi_wrap .parts-list-for-am > table tbody tr {
     width: 100%;
 }
-.modalTeneF .modalTeneF_wrap .parts-list-for-am > table thead,
-.modalTeneF .modalTeneF_wrap .parts-list-for-am > table tbody tr {
+.modalformi .modalformi_wrap .parts-list-for-am > table thead,
+.modalformi .modalformi_wrap .parts-list-for-am > table tbody tr {
     display: table;
     table-layout: fixed;
 }
-.modalTeneF .modalTeneF_wrap .parts-list-for-am > table > tbody > tr:last-child {
+.modalformi .modalformi_wrap .parts-list-for-am > table > tbody > tr:last-child {
     border-bottom: 1px solid #9e9e9e;
 }
-.modalTeneF .modalTeneF_wrap .parts-list-for-am th {
+.modalformi .modalformi_wrap .parts-list-for-am th {
     border: 1px solid #9e9e9e;
     padding: 5px;
     background-color: #e6e6e6;
@@ -477,18 +477,18 @@ h4.makerep_loaded_unit_title span {
     text-align:center;
     border-bottom: 0px;
 }
-.modalTeneF .modalTeneF_wrap .parts-list-for-am td {
+.modalformi .modalformi_wrap .parts-list-for-am td {
     border: 1px solid #9e9e9e;
     padding: 5px;
     border-bottom: 0px;
 }
-.modalTeneF .modalTeneF_wrap .parts-list-for-am td.partRow_num input {
+.modalformi .modalformi_wrap .parts-list-for-am td.partRow_num input {
     width:100%;
 }
-.modalTeneF .modalTeneF_wrap .parts-list-for-am td.partRow_status input {
+.modalformi .modalformi_wrap .parts-list-for-am td.partRow_status input {
     width:100%;
 }
-.modalTeneF .modalTeneF_wrap .parts-list-for-am td.partRow_supplied {
+.modalformi .modalformi_wrap .parts-list-for-am td.partRow_supplied {
     text-align: center !important;
 }
 /*************************************************************

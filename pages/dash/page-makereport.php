@@ -183,10 +183,10 @@ Trace::reg_var("all-am-dereg",$Page->variable("all-am-status"));
     <div class="clearfix"></div>
 </div>
 <!-- manage amlah location modal -->
-<div id="manage_am_location" class='modalTeneF' data-locrowedit="-1">
-    <div class="modalTeneF_wrap">
-        <div class='modalTeneF_head'><?php Lang::P("page_makereport_modal_header"); ?><span class="highlighted_name"></span></div>
-        <div class='modalTeneF_bodyFixed'>
+<div id="manage_am_location" class='modalformi' data-locrowedit="-1">
+    <div class="modalformi_wrap">
+        <div class='modalformi_head'><?php Lang::P("page_makereport_modal_header"); ?><span class="highlighted_name"></span></div>
+        <div class='modalformi_bodyFixed'>
             <div class="add_location_form">
                 <h4><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     <?php Lang::P("page_makereport_modal_header_add"); ?>
@@ -235,7 +235,7 @@ Trace::reg_var("all-am-dereg",$Page->variable("all-am-status"));
                   </button>
             </form>
         </div>
-        <div class='modalTeneF_foot'>
+        <div class='modalformi_foot'>
             <button type="button" class="btn btn-warning" onclick="window.teneReport.disLocationModal();">
                 <?php Lang::P("page_makereport_modal_but_loc_add"); ?>
             </button>
@@ -244,10 +244,10 @@ Trace::reg_var("all-am-dereg",$Page->variable("all-am-status"));
 </div>
 
 <!-- manage amlah parts modal -->
-<div id="manage_am_parts" class='modalTeneF' data-partsrowedit="-1">
-    <div class="modalTeneF_wrap">
-        <div class='modalTeneF_head'><?php Lang::P("page_makereport_modal_parts_header"); ?><span class="highlighted_name"></span></div>
-        <div class='modalTeneF_bodyFixed'>
+<div id="manage_am_parts" class='modalformi' data-partsrowedit="-1">
+    <div class="modalformi_wrap">
+        <div class='modalformi_head'><?php Lang::P("page_makereport_modal_parts_header"); ?><span class="highlighted_name"></span></div>
+        <div class='modalformi_bodyFixed'>
             <div class="add_location_form">
                 <h4><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     <?php Lang::P("page_makereport_modal_parts_header_add"); ?>
@@ -302,7 +302,7 @@ Trace::reg_var("all-am-dereg",$Page->variable("all-am-status"));
                 </table>
             </div>
         </div>
-        <div class='modalTeneF_foot'>
+        <div class='modalformi_foot'>
             <button type="button" class="btn btn-primary" onclick="window.teneReport.saveAndHookParts(this)">
                 <?php Lang::P("page_makereport_modal_but_parts_add"); ?>
             </button>

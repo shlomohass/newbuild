@@ -10,7 +10,7 @@ $Lang = array(
     "lang" => "English",
     "dic"  => array(
     //GENERAL:
-        "gen_title_prefix"              => "TeneF | ",
+        "gen_title_prefix"              => "formi | ",
         "gen_title_for_display"         => "דיווח וניתוח כשירות",
         
     //Login page:
@@ -96,7 +96,7 @@ $Lang = array(
         "inven_modal_but_close_ammodal"         => 'סגור וחזור',
         
     //App Page:
-        "home_title"                    => "TeneF Home",
+        "home_title"                    => "formi Home",
         "home_desc"                     => "",
         "home_keys"                     => "",
         

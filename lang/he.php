@@ -3,9 +3,11 @@ $Lang = array(
     "lang" => "Hebrew",
     "dic"  => array(
     //GENERAL:
-        "gen_title_prefix"              => "TeneF | ",
-        "gen_title_for_display"         => "דיווח וניתוח כשירות",
-        
+        "gen_title_prefix"              => "Formi | ",
+        "gen_title_for_display"         => "טפסים מקוונים",
+        "gen_desc"                      => "",
+        "gen_keys"                      => "",
+
     //Login page:
         "login_title"                   => "Login",
         "login_desc"                    => "",
@@ -94,7 +96,7 @@ $Lang = array(
         "inven_modal_but_close_ammodal"         => 'סגור וחזור',
         
     //App Page:
-        "home_title"                    => "TeneF Home",
+        "home_title"                    => "formi Home",
         "home_desc"                     => "",
         "home_keys"                     => "",
         

@@ -27,10 +27,10 @@ $Page->variable("all-units-priv", $User->list_privs());
     </thead>
 </table>
 
-<div id="manage_sadac" class='modalTeneF'>
-    <div class="modalTeneF_wrap">
-        <div class='modalTeneF_head'><?php Lang::P("inven_modal_gen_header"); ?><span class="highlighted_name"></span></div>
-        <div class='modalTeneF_bodyFixed'>
+<div id="manage_sadac" class='modalformi'>
+    <div class="modalformi_wrap">
+        <div class='modalformi_head'><?php Lang::P("inven_modal_gen_header"); ?><span class="highlighted_name"></span></div>
+        <div class='modalformi_bodyFixed'>
             <div class="add_sadac_form">
                 <h4><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     <?php Lang::P("inven_modal_addam_header"); ?>
@@ -76,12 +76,12 @@ $Page->variable("all-units-priv", $User->list_privs());
                 <?php Lang::P("inven_modal_amlist_header"); ?>
             </h4>
         </div>
-        <div class='modalTeneF_body'>
+        <div class='modalformi_body'>
             <div class='show_sadac'>
                 
             </div>
         </div>
-        <div class='modalTeneF_foot'>
+        <div class='modalformi_foot'>
             <button type="button" class="btn btn-primary" onclick="window.manage_sadac.disManageModal()">
                 <?php Lang::P("inven_modal_but_close_ammodal"); ?>
             </button>
@@ -238,7 +238,7 @@ $Page->variable("all-units-priv", $User->list_privs());
                         typeof response.code !== 'undefined' &&
                         response.code == "202"
                     ) {
-                        $("#manage_sadac").find(".modalTeneF_body").html(
+                        $("#manage_sadac").find(".modalformi_body").html(
                             window.manage_sadac.getAmlistHtmlRepresentation(response.results.amlist, response.results.editPriv)
                         );
                         callAfter();
