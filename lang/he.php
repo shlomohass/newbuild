@@ -2,18 +2,18 @@
 $Lang = array( 
     "lang" => "Hebrew",
     "dic"  => array(
-    //GENERAL:
+        //GENERAL:
         "gen_title_prefix"              => "Formi | ",
         "gen_title_for_display"         => "טפסים מקוונים",
         "gen_desc"                      => "",
         "gen_keys"                      => "",
 
-    //Login page:
+        //Login page:
         "login_title"                   => "Login",
         "login_desc"                    => "",
         "login_keys"                    => "",
     
-    //Dash nav right:
+        //Dash nav right:
         "dash_nav_dashboard"           => "שולחן עבודה",
         "dash_nav_makeform"            => "יצירת טופס מקוון",
         "dash_nav_viewforms"           => "ניהול טפסים מקוונים",
@@ -77,11 +77,11 @@ $Lang = array(
         "page_inventory_title"          => "הגדר סדכ",
         "inven_table_header_id"         => "מזהה",
         "inven_table_header_unit"       => "יחידה",
-        "inven_table_header_type"       => "סוג",
-        "inven_table_header_ofunit"     => "יחידת בת של",
-        "inven_table_header_place"      => "מיקום",
-        "inven_table_header_gen"        => "כללי",
-        "inven_table_header_actions"    => "פעולות",
+        "inven_table_header_type"               => "סוג",
+        "inven_table_header_ofunit"             => "יחידת בת של",
+        "inven_table_header_place"              => "מיקום",
+        "inven_table_header_gen"                => "כללי",
+        "inven_table_header_actions"            => "פעולות",
         
         //Edit sadac madal:
         "inven_modal_gen_header"                => 'עדכון סד"כ: ',
