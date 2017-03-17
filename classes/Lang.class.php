@@ -21,6 +21,7 @@ class Lang {
     private static $dic;
     private static $hooks;
     private static $lang;
+    private static $code;
     
     /** Load Dictionary
      * 
@@ -32,7 +33,8 @@ class Lang {
         Trace::add_trace('construct class',__METHOD__);
         self::$dic = (isset($load['dic']))?$load['dic']:array();
         self::$hooks = (isset($load['js']))?$load['js']:array();
-        self::$lang = (isset($load['lang']))?$load['lang']:array();
+        self::$lang = (isset($load['lang']))?$load['lang']:"";
+        self::$code = (isset($load['code']))?$load['code']:"";
     }
     
     /** Get current loaded language:
@@ -42,6 +44,15 @@ class Lang {
      */
     public static function get_lang() {
         return self::$lang;
+    }
+    
+    /** Get current loaded language code:
+     * 
+     * @return String
+     * 
+     */
+    public static function get_langCode() {
+        return self::$code;
     }
     
     /** Print a stored sentence

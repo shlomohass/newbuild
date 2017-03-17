@@ -8,6 +8,7 @@
 
 $Lang = array( 
     "lang" => "English",
+    "code" => "en",
     "dic"  => array(
     //GENERAL:
         "gen_title_prefix"              => "formi | ",

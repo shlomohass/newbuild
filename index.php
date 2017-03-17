@@ -27,6 +27,7 @@ if (isset($Page::$conf["general"]["uselang"]) && is_string($Page::$conf["general
     require_once PATH_LANG.$Page::$conf["general"]["uselang"].'.php';
 }
 Lang::load($Lang);
+Trace::add_trace("Page lang loaded",__FILE__, array(Lang::get_lang() => Lang::get_langCode()));
 
 /*********************** Login | Logout  Request? *****************************/
 // TODO : Redirect to dash location ??? add from conf where to redirect.

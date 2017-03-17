@@ -67,8 +67,7 @@ require_once PATH_STRUCT.'head.php';
 
 
 /****************************** Page Debugger Output ***********************************/
-//Trace::reg_var("onload view", $Page->variable("load-view"));
-//Trace::reg_var("all plans", $Page->variable("all-plans"));
+Trace::reg_var("onload view", $Page->variable("load-view"));
 //Trace::reg_var("all encodings", $Page->variable("all-encodings"));
 Trace::add_step(__FILE__,"Load page HTML");
 

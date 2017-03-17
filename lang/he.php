@@ -1,6 +1,7 @@
 <?php
 $Lang = array( 
     "lang" => "Hebrew",
+    "code" => "he",
     "dic"  => array(
         //GENERAL:
         "gen_title_prefix"              => "Formi | ",
