@@ -8,15 +8,16 @@ date_default_timezone_set('Asia/Jerusalem');
 /**************************** set gloable path hooks **************************/
 
 define('DS', DIRECTORY_SEPARATOR);
-define( 'PATH_BASE',            "gits".DS."formi".DS );
+define( 'PATH_BASE',            "gits".DS."formi".DS);
 define( 'PATH_CLASSES',         "classes".DS );
-define( 'PATH_LANG',            "lang".DS );
-define( 'PATH_PAGES',           "pages".DS   );
-define( 'PATH_STRUCT',          "pages".DS."struct".DS  );
-define( 'PATH_LIB_STYLE',       "lib".DS."css".DS  );
-define( 'GPATH_LIB_STYLE',      "lib/css/"  );
-define( 'PATH_LIB_JS',          "lib".DS."js".DS  );
-define( 'GPATH_LIB_JS',         "lib/js/"  );
+define( 'PATH_LANG',            "lang".DS);
+define( 'PATH_PAGES',           "pages".DS);
+define( 'PATH_STRUCT',          "pages".DS."struct".DS);
+define( 'GPATH_TPL',            "pages/templates/");
+define( 'PATH_LIB_STYLE',       "lib".DS."css".DS);
+define( 'GPATH_LIB_STYLE',      "lib/css/" );
+define( 'PATH_LIB_JS',          "lib".DS."js".DS);
+define( 'GPATH_LIB_JS',         "lib/js/");
 
 /************************** System Configuration ******************************/
 

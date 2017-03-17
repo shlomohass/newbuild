@@ -1028,11 +1028,3 @@ class DB {
         );
     }
 }
-
-
-/*
- * INSERT INTO `db_error_log` (`page`, `user_ip`, `proxy`, `host`, `sql_message`, `query_used`) 
- *        VALUES ('index.php', '::1', 'No proxy detected', 'shlomi-PC', 
- *       'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'te2 INSERT INTO `casediag` (`timeInit`, `timeStep_one`, `timeStep_two`, `timeSte\' at line 1', 
- *       'INSERT INTO `casediag` (`timeInit`, `timeStep_one`, `timeStep_two`, `timeStep_three`, `timeStep_rows`, `timeStep_five`, `timeStep_six`, `timeTotal`) VALUES (\'0.223\', \'5.093\', \'2.218\', \'0.126\', \'7.159\', \'1.853\', \'1.958\', \'18.63\')')
- */

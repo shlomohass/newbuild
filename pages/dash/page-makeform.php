@@ -101,7 +101,7 @@ Trace::reg_var("forms-blocks", $Page->variable("all-forms-blocks"));
     <br />
     <div>
         <div class="row dev">
-            <div class="dash-make-view col-sm-4 dev">
+            <div class="dash-make-view col-sm-4 hidden dev">
                 <h4>חלונית צפייה</h4>
             </div>
             <div class="dash-make-build col-sm-8 dev">
