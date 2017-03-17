@@ -281,7 +281,7 @@ body {
 .dash-make-view {
 
 }
-.make-select-types > div {
+.dash-make-select-types > div {
     display: inline-block;
     padding: 20px;
     min-width: 150px;
@@ -292,6 +292,12 @@ body {
     font-size: 1.5em;
     cursor: pointer;
     vertical-align: middle;
+}
+.dash-make-formele-build {
+    
+}
+.dash-make-formele-build .dash-make-add-ele {
+    
 }
 /*************************************************************
  * Spacers :
