@@ -263,7 +263,7 @@ class Trace {
       $retval = '';
       $prefix=str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;', $indent);
       if (is_numeric($data)) { $retval.= "Number: $data"; }
-      elseif (is_string($data)) { $retval.= "String: '$data'"; }
+      elseif (is_string($data)) { $retval.= "String: '".htmlentities($data)."'"; }
       elseif (is_null($data)) { $retval.= "NULL"; }
       elseif ($data===true) { $retval.= "TRUE"; }
       elseif ($data===false) { $retval.= "FALSE"; }
