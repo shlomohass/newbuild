@@ -22,6 +22,7 @@ class Lang {
     private static $hooks;
     private static $lang;
     private static $code;
+    private static $dir;
     
     /** Load Dictionary
      * 
@@ -34,7 +35,8 @@ class Lang {
         self::$dic = (isset($load['dic']))?$load['dic']:array();
         self::$hooks = (isset($load['js']))?$load['js']:array();
         self::$lang = (isset($load['lang']))?$load['lang']:"";
-        self::$code = (isset($load['code']))?$load['code']:"";
+        self::$code = (isset($load['code']))?$load['code']:"en";
+        self::$dir = (isset($load['dir']))?$load['dir']:"ltr";
     }
     
     /** Get current loaded language:
@@ -53,6 +55,15 @@ class Lang {
      */
     public static function get_langCode() {
         return self::$code;
+    }
+    
+     /** Get current loaded language code:
+     * 
+     * @return String
+     * 
+     */
+    public static function get_langDir() {
+        return self::$dir;
     }
     
     /** Print a stored sentence

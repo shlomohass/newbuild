@@ -1,6 +1,7 @@
 <?php
 $Lang = array( 
     "lang" => "Hebrew",
+    "dir"  => "rtl",
     "code" => "he",
     "dic"  => array(
         //GENERAL:

@@ -34,10 +34,9 @@ $use_version = (!empty($Page->version))?"?version=".$Page->version:"";
             echo "<link rel='stylesheet' href='".$Page::$conf["general"]["site_base_url"].$sheet.$use_version."' />";
         }
         //Load base style sheet if its set:
-        //TODO: load css by rtl ltr.
         if (!empty($Page->template)) {
             echo "<!-- Theme CSS-->";
-            echo "<link rel='stylesheet' href='".$Page::$conf["general"]["site_base_url"].GPATH_LIB_STYLE.$Page->template.$use_version."' />";
+            echo "<link rel='stylesheet' href='".$Page::$conf["general"]["site_base_url"].GPATH_LIB_STYLE."style/".Lang::get_langDir()."/".$Page->template.$use_version."' />";
         }
     ?>
     <!-- JS Script head extend -->
