@@ -16,6 +16,32 @@ if (!empty($Page->variable("all-forms-build"))) {
     $Page->variable("all-forms-build", $temp_arr);
     unset($temp_arr);
 }
+//Open jsons in the forms types:
+if (!empty($Page->variable("all-forms-build"))) {
+    $res = array();
+    foreach ($Page->variable("all-forms-build") as $key => $form) {
+        $res[$key] = $form;
+        
+        //Parse the json:
+        $res[$key]['form_struct_name'] = json_decode($form['form_struct_name'], true);
+        $res[$key]['form_struct_help'] = json_decode($form['form_struct_help'], true);
+        
+        //Set the correct display names and text:
+        if (isset($res[$key]['form_struct_name'][Lang::get_langCode().'-name'])) {
+            $res[$key]['form_struct_name']['parsed-name'] = $res[$key]['form_struct_name'][Lang::get_langCode().'-name'];
+            $res[$key]['form_struct_help']['parsed-desc'] = $res[$key]['form_struct_help'][Lang::get_langCode().'-desc'];
+
+        } elseif (isset($res[$key]['form_struct_name']['en-name'])) {
+            $res[$key]['form_struct_name']['parsed-name'] = $res[$key]['form_struct_name']['en-name'];
+            $res[$key]['form_struct_help']['parsed-desc'] = $res[$key]['form_struct_help']['en-desc'];
+        } else {
+            $res[$key]['form_struct_name']['parsed-name'] = "un-named";
+            $res[$key]['form_struct_help']['parsed-desc'] = "not-described";
+        }
+    }
+    $Page->variable("all-forms-build", $res);
+    unset($res);
+}
 //Open jsons in the blocks:
 if (!empty($Page->variable("all-blocks"))) {
     $res = array();
@@ -28,14 +54,12 @@ if (!empty($Page->variable("all-blocks"))) {
      unset($res);
 }
 //Sort the blocks by names:
-/*
 if (!empty($Page->variable("all-blocks"))) {
     $temp_arr = $Page->variable("all-blocks");
-    usort($temp_arr, function($a,$b){ return strcmp($a['title'], $b['title']); });
+    usort($temp_arr, function($a,$b){ return strcmp($a["block_name"][Lang::get_langCode()."-name"], $a["block_name"][Lang::get_langCode()."-name"]); });
     $Page->variable("all-blocks", $temp_arr);
     unset($temp_arr);
 }
-*/
 //Group the blocks allowed on a form:
 if (!empty($Page->variable("all-forms-blocks"))) {
     $res = array();
@@ -62,24 +86,13 @@ Trace::reg_var("forms-blocks", $Page->variable("all-forms-blocks"));
             <div class="dash-make-select-types">
                 <?php
                     //TODO: escape title {help} from html entities.
-                    foreach($Page->variable("all-forms-build") as $key => $form) {
+                    foreach($Page->variable("all-forms-build") as $key => &$form) {
                         //Skips disabled forms structures:
                         if (isset($form['form_struct_enable']) && $form['form_struct_enable'] == 0) continue;
-                        
-                        //Get the object for lang support:
-                        $form['form_struct_name'] = json_decode($form['form_struct_name'], true);
-                        $form['form_struct_help'] = json_decode($form['form_struct_help'], true);
-                        
-                        //If the lang is present print it otherwise try to print the english version:
-                        if (isset($form['form_struct_name'][Lang::get_langCode().'-name'])) {
-                            echo "<div class='dev' title='".$form['form_struct_help'][Lang::get_langCode().'-desc']."'>".
-                                $form['form_struct_name'][Lang::get_langCode().'-name'].
+                        //Output:
+                        echo "<div data-formid='".$form['form_struct_id']."' class='dash-make-form-type dev' title='".$form['form_struct_help']['parsed-desc']."'>".
+                                $form['form_struct_name']['parsed-name'].
                                 "</div>";
-                        } elseif(isset($form['form_struct_name']['en-name'])) {
-                            echo "<div class='dev' title='".$form['form_struct_help']['en-name']."'>".
-                                $form['form_struct_name']['en-name'].
-                                "</div>";
-                        }
                     }
                 ?>
             </div>
@@ -87,22 +100,51 @@ Trace::reg_var("forms-blocks", $Page->variable("all-forms-blocks"));
     </div>
     <br />
     <div>
-        <div class="row  dev">
+        <div class="row dev">
             <div class="dash-make-view col-sm-4 dev">
                 <h4>חלונית צפייה</h4>
             </div>
             <div class="dash-make-build col-sm-8 dev">
-                <h4>יצירת הטופס</h4>
-                <form clas="dash-make-formele-build dev">
-                    <div class="dash-make-add-ele">
-                        <select name="" class="">
-                            <?php
-                            
-                            ?>
-                        </select>
-                        <input type="button" value="הוסף" />
+                <?php
+                    foreach ($Page->variable("all-forms-build") as $form_key => $form) {
+                        if (isset($form['form_struct_enable']) && $form['form_struct_enable'] == 0) continue;
+                ?>
+                <form class="dash-make-formele-build hidden dev" data-formid="<?php echo $form['form_struct_id']; ?>">
+                    <h4>
+                        <?php 
+                            echo Lang::P("page_makereport_form_build_header", false)." - ".
+                                 $form["form_struct_name"]["parsed-name"];
+                        ?>
+                    </h4>
+                    <div class="dash-make-add-ele col-sm-12 dev">
+                        <div class="col-sm-3">
+                            <input type="button" value="הוסף" class="dash-make-formele-add btn btn-default btn-block" />
+                        </div>
+                        <div class="col-sm-9">
+                            <select name="form_add_type" class="form-control">
+                                <?php
+                                    $ava = $Page->in_variable("all-forms-blocks", $form["form_struct_id"]);
+                                    if (!empty($ava)) {
+                                        foreach($Page->variable("all-blocks") as $key => $block) {
+                                            //Will print only blocks that are attached to the form:
+                                            if ($Page->Func->search_multi_secondDim($ava, "block", $block["block_id"]) !== false) {
+                                                echo "<option value=".$block["block_id"].">".$block["block_name"][Lang::get_langCode()."-name"]."</option>";
+                                            }
+                                        }
+                                    } else {
+                                        //TODO: Handle the case that their are no blocks attached.
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
+                    <div class="clearfix"></div>
                 </form>
+                <div class="clearfix"></div>
+                <?php
+                    }
+                ?>
             </div>
         </div>
     </div>

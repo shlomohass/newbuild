@@ -39,6 +39,10 @@ $Lang = array(
         "page_makereport_newRep_title"      => "הוספת דוח חדש לתאריך: ",
         "page_makereport_but_create_report" => "הפק דוח כשירות חדש",
         "page_makereport_but_save_report" => "עדכן דוח כשירות: ",
+        
+    
+        "page_makereport_form_build_header" => "יצירת טופס",
+    
     
         //Edit location Modal:
         "page_makereport_modal_header"      => "ערוך מיקום",
